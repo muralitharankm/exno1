@@ -1,13 +1,13 @@
 # Exno:1
 Data Cleaning Process
 
-# AIM
+# AIM:
 To read the given data and perform data cleaning and save the cleaned data to a file.
 
-# Explanation
+# Explanation:
 Data cleaning is the process of preparing data for analysis by removing or modifying data that is incorrect ,incompleted , irrelevant , duplicated or improperly formatted. Data cleaning is not simply about erasing data ,but rather finding a way to maximize datasets accuracy without necessarily deleting the information.
 
-# Algorithm
+# Algorithm:
 STEP 1: Read the given Data
 
 STEP 2: Get the information about the data
@@ -20,127 +20,129 @@ STEP 5: Remove outliers using IQR
 
 STEP 6: Use zscore of to remove outliers
 
-# Coding and Output
-```            
+# Coding and Output:
+```py
 import pandas as pd
-df=pd.read_csv("/content/SAMPLEIDS.csv")
+df= pd.read_csv("/content/SAMPLEIDS (2).csv")
 df
 ```
-![Screenshot 2025-03-04 205446](https://github.com/user-attachments/assets/98ac9420-d334-46fc-91af-2bd0df00729e)
+<img width="1079" height="859" alt="image" src="https://github.com/user-attachments/assets/e7737cd3-dd5d-4b5d-889d-cbde9a2c6927" />
+
+```py
+df.head(3)
 ```
+<img width="1093" height="191" alt="image" src="https://github.com/user-attachments/assets/95c15ec5-9ddb-49b6-a4bd-fdfee14bfadf" />
+
+```py
+df.tail(5)
+```
+<img width="1118" height="272" alt="image" src="https://github.com/user-attachments/assets/47f6a8b6-2d61-49cf-80d6-b4666e642dd2" />
+
+```py
+df.isnull()
+```
+<img width="1009" height="867" alt="image" src="https://github.com/user-attachments/assets/025ef5af-1dc0-4c14-96b2-f0a96f2a32ac" />
+
+```py
+df.notnull()
+```
+<img width="953" height="852" alt="image" src="https://github.com/user-attachments/assets/2b2fb83b-ec6a-4a39-bf83-9f79fff55cb0" />
+
+```py
 df.isnull().sum()
 ```
-![Screenshot 2025-03-04 210028](https://github.com/user-attachments/assets/56422d77-1b6f-42a4-aa99-4f02a6da47a1)
+<img width="255" height="582" alt="image" src="https://github.com/user-attachments/assets/001a2c72-2a65-4173-a694-48c255aa56d1" />
+
+```py
+df.isnull().any()
 ```
-df.isnull().any()<br>
+<img width="290" height="579" alt="image" src="https://github.com/user-attachments/assets/84bba7ce-d471-497d-b687-52543c4a5e0a" />
+
+```py
+df.dropna(axis=0)
 ```
-![Screenshot 2025-03-04 210304](https://github.com/user-attachments/assets/2cd982fb-15f0-4510-b09b-cbf665fac6c0)
+<img width="1158" height="583" alt="image" src="https://github.com/user-attachments/assets/0225f5c2-57a6-49c4-9337-e1c50acc5b96" />
+
+```py
+df.dropna(axis=1)
 ```
-df.dropna()
+<img width="484" height="862" alt="image" src="https://github.com/user-attachments/assets/62e29f35-71fb-46bd-9e56-470f604572a7" />
+
+```py
+df.fillna("%")
 ```
-![Screenshot 2025-03-04 210432](https://github.com/user-attachments/assets/c8989206-c474-4bb0-a326-7ada03b748f5)
+<img width="1127" height="867" alt="image" src="https://github.com/user-attachments/assets/fcbb9886-a40b-4404-aed8-136ab03720c3" />
+
+```py
+df.fillna (method = 'ffill')
 ```
-df.fillna(0)
+<img width="1079" height="865" alt="image" src="https://github.com/user-attachments/assets/f0bff26d-0e94-411c-b577-cb93d5c164c9" />
+
+```py
+df.fillna (method = 'bfill')
 ```
-![Screenshot 2025-03-04 210508](https://github.com/user-attachments/assets/bbb96bc8-aae9-4f1c-89a5-6a65dc3dfe8b)
+<img width="1075" height="858" alt="image" src="https://github.com/user-attachments/assets/8cbc1dc4-b8a2-40ad-9a93-237cad9c336e" />
+
+```py
+df.fillna({'GENDER':'MALE','NAME':'LEO DAS'})
 ```
-df.fillna(method='ffill')
-```
-![Screenshot 2025-03-04 210609](https://github.com/user-attachments/assets/6adfa1ee-f7ba-4c2c-a34c-acc37ed5903e)
-```
-df.fillna(method='bfill')
-```
-![Screenshot 2025-03-04 210652](https://github.com/user-attachments/assets/94a0fd61-837e-448c-b31e-112a687191c1)
-```
-df_dropped = df.dropna()
-df_dropped
-```
-![Screenshot 2025-03-04 210916](https://github.com/user-attachments/assets/0a58678e-0fa2-4f7f-bba9-545302fc91c6)
-```
-df.fillna({'GENDER':'MALE','NAME':'SRI','ADDRESS':'POONAMALEE','M1':98,'M2':87,'M3':76,'M4':92,'TOTAL':305,'AVG':89.999999})
-```
-![Screenshot 2025-03-04 211031](https://github.com/user-attachments/assets/c1b98abb-19f2-4486-b02a-49cbb49ec5d2)
-```
-ir=pd.read_csv("/content/iris.csv")
+<img width="1110" height="859" alt="image" src="https://github.com/user-attachments/assets/3df324b4-c4a2-4ea9-a7a7-f2fe187cf12c" />
+
+```py
+ir=pd.read_csv("/content/iris (2).csv")
 ir
 ```
-![Screenshot 2025-03-04 211107](https://github.com/user-attachments/assets/a6b7f662-eb6b-46f2-86bf-c159dd3226b8)
-```
+<img width="770" height="521" alt="image" src="https://github.com/user-attachments/assets/e67d2039-1f02-461e-9929-1cc2b5517b85" />
+
+```py
 ir.describe()
 ```
-![Screenshot 2025-03-04 211143](https://github.com/user-attachments/assets/99162c39-9677-410f-a78a-b9bb84ef48de)
-```
+<img width="795" height="379" alt="image" src="https://github.com/user-attachments/assets/b295f0b4-2400-4b9d-8fd2-01873dded29d" />
+
+```py
 import seaborn as sns
 sns.boxplot(x='sepal_width',data=ir)
 ```
-![Screenshot 2025-03-04 211230](https://github.com/user-attachments/assets/b398f218-921e-4045-8983-c79c7467cdb7)
+<img width="807" height="708" alt="image" src="https://github.com/user-attachments/assets/5e5b1faf-bb14-4ef9-b86e-53bedb315db6" />
+
+```py
+Q1= ir.sepal_width.quantile(0.25)
+Q3= ir.sepal_width.quantile(0.75)
+IQR= Q3-Q1
+print(IQR )
 ```
-q1=ir.sepal_width.quantile(0.25)
-q3=ir.sepal_width.quantile(0.75)
-iq=q3-q1
-print(q3)
-```
-![Screenshot 2025-03-04 211316](https://github.com/user-attachments/assets/02dcc8a6-d6c2-40d0-9fd5-398bf06ed3b2)
-```
-rid=ir[((ir.sepal_width<(q1-1.5*iq))|(ir.sepal_width>(q3+1.5*iq)))]
+<img width="429" height="43" alt="image" src="https://github.com/user-attachments/assets/d0911872-9abf-4566-a3de-69e3abd6be1d" />
+
+```py
+rid=ir[((ir.sepal_width<(Q1-1.5*IQR))|(ir.sepal_width>(Q3+1.5*IQR)))]
 rid['sepal_width']
 ```
-![Screenshot 2025-03-04 211414](https://github.com/user-attachments/assets/0cd26dc2-8d9d-4133-ab65-1266ffef2720)
-``
-delid=ir[~((ir.sepal_width<(q1-1.5*iq))|(ir.sepal_width>(q3+1.5*iq)))]
-delid
+<img width="252" height="269" alt="image" src="https://github.com/user-attachments/assets/1f7b75e1-f1fb-47af-bf47-92d5f9f6211c" />
 
-![Screenshot 2025-03-04 211553](https://github.com/user-attachments/assets/bfad9299-0cf2-421d-9ad7-86a4490a83ad)
-``
-sns.boxplot(x='sepal_width',data=delid)
-
-![Screenshot 2025-03-04 211636](https://github.com/user-attachments/assets/ef94f0f4-783b-45a1-bf55-049bc8451398)
+```py
+rid=ir[~((ir.sepal_width<(Q1-1.5*IQR))|(ir.sepal_width>(Q3+1.5*IQR)))]
+rid['sepal_width']
 ```
-import matplotlib.pyplot as plt
-import pandas as pd
+<img width="299" height="570" alt="image" src="https://github.com/user-attachments/assets/eef3640e-a0e9-4e31-9a37-e602c37abe80" />
+
+```py
+sns.boxplot(x='sepal_width',data= rid)
+```
+<img width="788" height="591" alt="image" src="https://github.com/user-attachments/assets/db049b8d-674a-4145-992e-5e4419bcc078" />
+
+```py
 import numpy as np
 import scipy.stats as stats
-``
+Z= np.abs(stats.zscore(ir['sepal_width']))
+Z
+```
+<img width="840" height="680" alt="image" src="https://github.com/user-attachments/assets/4b25b8ee-0f7c-4f5e-be4d-1212d6412a4a" />
 
-dataset=pd.read_csv("heights.csv")
-dataset
-```
-![Screenshot 2025-03-04 211730](https://github.com/user-attachments/assets/ca58957c-4608-4f6d-917b-80d8edd4c297)
-```
-df = pd.read_csv("heights.csv")
-q1 = df['height'].quantile(0.25)
-q2 = df['height'].quantile(0.5)
-q3 = df['height'].quantile(0.75)
-``
-
-iqr = q3-q1
-iqr
-```
-![image](https://github.com/user-attachments/assets/398577f5-8d9d-4a38-8e72-65ee3bea7bb0)
-```
-low = q1- 1.5*iqr
-low
-```
-![Screenshot 2025-03-04 211841](https://github.com/user-attachments/assets/47447697-93ba-4d31-92d8-ed459fc816ee)
-```
-high = q3 + 1.5*iqr
-high
-```
-![Screenshot 2025-03-04 211910](https://github.com/user-attachments/assets/2fcb4843-2760-4a0d-b7d4-e6d1ca432bc2)
-```
-df1 = df[((df['height'] >=low)& (df['height'] <=high))]
+```py
+df1 = ir[Z<3]
 df1
 ```
-![Screenshot 2025-03-04 211947](https://github.com/user-attachments/assets/378d4ceb-f673-42fd-a4a0-0fc4c510cd7e)
-```
-z = np.abs(stats.zscore(df['height']))
-z
-```
-![image](https://github.com/user-attachments/assets/40d8c650-7ee8-4e3a-a752-16b8e32f666b)
-```
-df1 = df[z<3]
-df1
-```
-![Screenshot 2025-03-04 212127](https://github.com/user-attachments/assets/39a061e1-ef2a-4b5e-934e-f3ca0e18e37b)
-# Result
-          <<include your Result here>>
+<img width="786" height="549" alt="image" src="https://github.com/user-attachments/assets/c22fb912-c213-411f-b517-5e7060fd097f" />
+
+# Result:
+The given data has been successfully read, cleaned by handling duplicates and missing values, and saved to a new file named cleaned_data.csv.
